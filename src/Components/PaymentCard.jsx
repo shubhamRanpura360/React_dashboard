@@ -13,24 +13,22 @@ import {
 import { FaArrowDownLong } from "react-icons/fa6";
 import { HiDotsVertical } from "react-icons/hi";
 
-
-
 const PaymentCard = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  
-    const toggleDropdown = () => {
-      setIsDropdownOpen(!isDropdownOpen);
-    };
-  
-    const handleViewMore = () => {
-      console.log("View More clicked");
-      setIsDropdownOpen(false);
-    };
-  
-    const handleDelete = () => {
-      console.log("Delete clicked");
-      setIsDropdownOpen(false);
-    };
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleViewMore = () => {
+    console.log("View More clicked");
+    setIsDropdownOpen(false);
+  };
+
+  const handleDelete = () => {
+    console.log("Delete clicked");
+    setIsDropdownOpen(false);
+  };
 
   const revenueData = [
     { name: "M", value: 200 },
@@ -51,9 +49,6 @@ const PaymentCard = () => {
     { month: "Jun", value: 84686 },
   ];
 
-  
-
-
   return (
     <div className="flex flex-wrap gap-5 w-full ">
       {/* Top Cards Container */}
@@ -67,28 +62,28 @@ const PaymentCard = () => {
                 alt="Sales"
                 className="h-12 w-12 object-cover"
               />
-              <button className="p-2 rounded-full hover:bg-gray-200 focus:outline-none" onClick={toggleDropdown}>
-             
+              <button
+                className="p-2 rounded-full hover:bg-gray-200 focus:outline-none"
+                onClick={toggleDropdown}
+              >
                 <HiDotsVertical className="text-gray-500 cursor-pointer" />
               </button>
               {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
-                <button
-                  onClick={handleViewMore}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100  hover:text-[#696cff]"
-                >
-                  View More
-                </button>
-                <button
-                  onClick={handleDelete}
-                  className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100  hover:text-[#696cff]"
-                >
-                  Delete
-                </button>
-              </div>
-            )}
-
-
+                <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                  <button
+                    onClick={handleViewMore}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100  hover:text-[#696cff]"
+                  >
+                    View More
+                  </button>
+                  <button
+                    onClick={handleDelete}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100  hover:text-[#696cff]"
+                  >
+                    Delete
+                  </button>
+                </div>
+              )}
             </div>
             <p className="mt-4 text-xl text-[#646E78] pl-3 h-10">Payments</p>
             <h4 className="text-4xl font-bold text-[#384551] pl-3">$4,679</h4>
@@ -157,6 +152,5 @@ const PaymentCard = () => {
     </div>
   );
 };
-
 
 export default PaymentCard;

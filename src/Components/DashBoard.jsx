@@ -3,6 +3,7 @@ import { Congrats } from "./Congrats";
 import { Order_Sales } from "./Order_sales";
 import Revanue from "./Revanue";
 import PaymentCard from "./PaymentCard";
+import IncomeCard from "./incomeData";
 
 
 function Dashboard() {
@@ -13,6 +14,7 @@ function Dashboard() {
         <Order_Sales />
         <Revanue />
        < PaymentCard/> 
+      < IncomeCard/>
       </div>
     </div>
   );

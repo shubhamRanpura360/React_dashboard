@@ -69,7 +69,7 @@ export const Order_Sales = () => {
           </div>
           <p className="mt-4 text-xl text-[#646E78] pl-3 h-10">Sales</p>
           <h4 className="text-4xl font-bold text-[#384551] pl-3">$4,679</h4>
-          <small className="flex items-center text-2xl text-green-500 mt-9 pl-3">
+          <small className="flex items-center text-2xl text-green-500 mt-6 pl-3">
             <FaArrowUp className="mr-1" />
             +28.42%
           </small>

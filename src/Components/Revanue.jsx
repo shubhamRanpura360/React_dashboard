@@ -36,10 +36,10 @@ const Revenue = () => {
   };
 
   return (
-    <Card className="w-full p-8">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <Card className="w-full p-12 ">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 ">
         {/* Left section */}
-        <div className="md:col-span-2 p-6">
+        <div className="md:col-span-2 p-12">
           <div className="flex items-center justify-between mb-6 relative">
             <h5 className="text-lg font-medium text-gray-700">Total Revenue</h5>
             <button className="p-1 rounded-full hover:bg-gray-100 text-gray-400">

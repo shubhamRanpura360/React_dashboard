@@ -105,7 +105,7 @@ const Revenue = () => {
         </div>
 
         {/* Right section */}
-        <div className="md:col-span-1 p-6 border-l border-gray-200">
+        <div className="md:col-span-1 p-8 border-l border-gray-200">
           <div className="flex justify-center mb-8">
             <button className="inline-flex items-center px-4 py-2 bg-indigo-50 rounded-lg text-indigo-600 hover:bg-indigo-100">
               <span className="font-medium mr-2">2023</span>

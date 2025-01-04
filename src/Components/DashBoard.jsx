@@ -8,15 +8,17 @@ import IncomeCard from "./incomeData";
 
 function Dashboard() {
   return (
+    <>
     <div className="bg-gray-100 min-h-screen max-w-[1600px] w-full relative px-8 py-4 pl-36 ">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-[109%]">
         < Congrats/>
         <Order_Sales />
         <Revanue />
        < PaymentCard/> 
-      < IncomeCard/>
+      < IncomeCard/>  
       </div>
     </div>
+    </>
   );
 }
 

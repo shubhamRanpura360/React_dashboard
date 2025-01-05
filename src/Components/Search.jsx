@@ -16,10 +16,14 @@ export const Search = () => {
           className="w-full text-2xl bg-transparent outline-none text-gray-700"
         />
         <div className="flex items-center ml-4 space-x-10">
-          <GrLanguage className="text-gray-500 text-2xl" />
-          <MdOutlineLightMode className="text-black-500 text-2xl" />
-          <IoNotifications className="text-gray-500 text-2xl" />
-          <CgProfile className="text-gray-500 text-2xl" />
+          <GrLanguage className="text-gray-500 w-10 h-10" />
+          <MdOutlineLightMode className="text-black-500 w-10 h-10" />
+          <IoNotifications className="text-gray-500 w-10 h-10" />
+          <img
+            src="/profile.png"
+            alt="profile"
+            className="w-10 h-10 rounded-full"
+          />
         </div>
       </div>
     </div>

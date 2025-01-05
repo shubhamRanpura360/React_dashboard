@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "./Card";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaMobileAlt } from "react-icons/fa";
@@ -10,6 +10,24 @@ import IncomeChart from "./incomeGraph";
 import { TransactionCard } from "./TransactionCard";
 
 const IncomeCard = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+  
+  const handleSelectAll = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const handleRefresh = () => {
+    setIsDropdownOpen(false);
+  };
+
+  const handleShare = () => {
+    setIsDropdownOpen(false);
+  };
+
   return (
     <div className=" flex flex-row  md:flex-row gap-6">
       {/* Order Statistics Card */}
@@ -24,9 +42,32 @@ const IncomeCard = () => {
                 </p>
               </div>
               <button>
-                <BsThreeDotsVertical />
+                <BsThreeDotsVertical onClick={toggleDropdown} />
               </button>
+              {isDropdownOpen && (
+                <div className="absolute mt-16 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
+                  <button
+                    onClick={handleSelectAll}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 hover:text-[#696cff]"
+                  >
+                    Select All
+                  </button>
+                  <button
+                    onClick={handleRefresh}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 hover:text-[#696cff]"
+                  >
+                    Refresh
+                  </button>
+                  <button
+                    onClick={handleShare}
+                    className="w-full px-4 py-2 text-left text-gray-700 hover:bg-gray-100 hover:text-[#696cff]"
+                  >
+                    Share
+                  </button>
+                </div>
+              )}
             </div>
+
             <div className="flex items-center max-h-[120px] ">
               {/* Left Side */}
               <div className="p-6 mb-6">
@@ -152,18 +193,15 @@ const IncomeCard = () => {
                 </h5>
               </div>
               <button>
-                <BsThreeDotsVertical />
+                <BsThreeDotsVertical  />
               </button>
             </div>
             {/* Transactions Card - Data */}
             <TransactionCard />
           </div>
-          
         </CardContent>
       </Card>
-   
     </div>
-  
   );
 };
 

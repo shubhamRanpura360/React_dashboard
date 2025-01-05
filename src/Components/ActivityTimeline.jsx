@@ -194,13 +194,17 @@ const ActivityCard = () => {
                 </div>
                 <div className="col-span-3 flex items-center gap-2">
                   <img
-                    src={`/public/${browser.name.toLowerCase()}.png`} 
+                    src={`/public/${browser.name.toLowerCase()}.png`}
                     alt={browser.name}
                     className={`h-6 w-6 ${browser.iconColor}`}
                   />
-                  <span className="text-1xl text-[#384551] font-semibold">{browser.name}</span>
+                  <span className="text-1xl text-[#384551] font-semibold">
+                    {browser.name}
+                  </span>
                 </div>
-                <div className="col-span-2 text-1xl font-semibold">{browser.visits}</div>
+                <div className="col-span-2 text-1xl font-semibold">
+                  {browser.visits}
+                </div>
                 <div className="col-span-6 flex items-center gap-4">
                   <div className="flex-1 bg-gray-100 rounded-full h-2">
                     <div

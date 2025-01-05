@@ -5,6 +5,7 @@ import Revanue from "./Revanue";
 import PaymentCard from "./PaymentCard";
 import IncomeCard from "./incomeData";
 import ActivityCard from "./ActivityTimeline";
+import Footer from "./Footer";
 // import ActivityTimeline from "./ActivityTimeline";
 
 
@@ -22,6 +23,7 @@ function Dashboard() {
       </div>
     {/* <  ActivityTimeline/> */}
    < ActivityCard/>
+  < Footer/>
     </div>
     </>
   );

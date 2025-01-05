@@ -4,6 +4,9 @@ import { Order_Sales } from "./Order_sales";
 import Revanue from "./Revanue";
 import PaymentCard from "./PaymentCard";
 import IncomeCard from "./incomeData";
+import ActivityCard from "./ActivityTimeline";
+// import ActivityTimeline from "./ActivityTimeline";
+
 
 
 function Dashboard() {
@@ -15,8 +18,10 @@ function Dashboard() {
         <Order_Sales />
         <Revanue />
        < PaymentCard/> 
-      < IncomeCard/>  
+      < IncomeCard/>   
       </div>
+    {/* <  ActivityTimeline/> */}
+   < ActivityCard/>
     </div>
     </>
   );

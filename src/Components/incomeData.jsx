@@ -158,9 +158,12 @@ const IncomeCard = () => {
             {/* Transactions Card - Data */}
             <TransactionCard />
           </div>
+          
         </CardContent>
       </Card>
+   
     </div>
+  
   );
 };
 

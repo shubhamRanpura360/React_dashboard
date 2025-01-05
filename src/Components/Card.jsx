@@ -16,4 +16,13 @@ export const Card = ({ children, className = "", ...props }) => (
   </div>
 );
 
+export const CardHeader = ({ children, className = "", ...props }) => (
+  <div
+    className={`p-4 ${className}`}
+    {...props}
+  >
+    {children}
+  </div>
+);
+
 export default Card;

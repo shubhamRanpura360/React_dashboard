@@ -180,7 +180,7 @@ const ActivityCard = () => {
             <div className="grid grid-cols-12 text-sm text-[#384551] mb-2 font-semibold">
               <div className="col-span-1">NO</div>
               <div className="col-span-3">BROWSER</div>
-              <div className="col-span-2">VISITS</div>
+              <div className="col-span-2">VISITS</div> 
               <div className="col-span-6">DATA IN PERCENTAGE</div>
             </div>
 

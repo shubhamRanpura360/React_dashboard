@@ -3,11 +3,12 @@ import { FiSearch } from "react-icons/fi";
 import { GrLanguage } from "react-icons/gr";
 import { MdOutlineLightMode } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
-import { CgProfile } from "react-icons/cg";
+
+import ProfileDropdown from "./ProfileDown";
 
 export const Search = () => {
   return (
-    <div className="bg-white w-[1590px] p-4 left-36 shadow-sm top-0 sticky z-10 mb-6">
+    <div className="bg-white w-[1590px] h-[80px] p-4 left-36 shadow-sm top-0 sticky z-10 mb-6">
       <div className="flex items-center p-2 rounded-md ">
         <FiSearch className="text-gray-500 mr-2 text-3xl" />
         <input
@@ -19,11 +20,8 @@ export const Search = () => {
           <GrLanguage className="text-gray-500 w-10 h-10" />
           <MdOutlineLightMode className="text-black-500 w-10 h-10" />
           <IoNotifications className="text-gray-500 w-10 h-10" />
-          <img
-            src="/profile.png"
-            alt="profile"
-            className="w-10 h-10 rounded-full"
-          />
+          {/* profile dropdown menu*/}
+          < ProfileDropdown/>
         </div>
       </div>
     </div>

@@ -80,7 +80,7 @@ export default function Sidebar() {
               <TiShoppingCart className="text-gray-500 text-3xl" />
               {!isSidebarCollapsed && (
                 <>
-                  <span className="text-gray-700 text-2xl ">eCommerce</span>
+                  <span className="text-gray-700 text-2xl  ">eCommerce</span>
                   <span
                     className={`transform transition-transform ml-auto ${
                       isEcommerceOpen ? "rotate-90" : ""

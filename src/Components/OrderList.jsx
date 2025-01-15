@@ -90,9 +90,7 @@ const OrderList = () => {
 
   return (
     <>
-      <div
-        className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-white sticky left-36 max-w-[1590px] overflow-x-hidden"
-      >
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-white sticky left-36 max-w-[1590px] overflow-x-hidden">
         {stats.map((stat, index) => (
           <StatCard
             key={index}

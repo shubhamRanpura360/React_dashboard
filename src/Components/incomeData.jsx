@@ -15,7 +15,7 @@ const IncomeCard = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
-  
+
   const handleSelectAll = () => {
     setIsDropdownOpen(false);
   };
@@ -193,7 +193,7 @@ const IncomeCard = () => {
                 </h5>
               </div>
               <button>
-                <BsThreeDotsVertical  />
+                <BsThreeDotsVertical />
               </button>
             </div>
             {/* Transactions Card - Data */}

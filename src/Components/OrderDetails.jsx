@@ -97,7 +97,7 @@ const OrderDetails = () => {
 
   const handleDeleteOrder = () => {
     console.log("Order deleted");
-    setIsDeleteModalOpen(true); 
+    setIsDeleteModalOpen(true);
   };
 
   const openModal = () => {

@@ -12,19 +12,16 @@ export default {
 
 // tailwind.config.js
 module.exports = {
-  darkMode: 'class', // Enable class-based dark mode
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}", // Adjust this path based on your project structure
-  ],
+  darkMode: 'class', // Enables dark mode using the 'dark' class
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
-        dark: {
-          background: '#1a202c',
-          text: '#e2e8f0',
-        },
+        'dark-background': '#1e1e2f',
+        'dark-text': '#e4e4e7',
       },
     },
   },
   plugins: [],
 };
+

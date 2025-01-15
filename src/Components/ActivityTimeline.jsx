@@ -118,7 +118,7 @@ const ActivityCard = () => {
                   {activity.attachment && (
                     <div className="flex items-center space-x-2 mt-2 rounded-md font-semibold">
                       <FileText size={20} className="text-red-500 " />
-                      <span className="text-1xl text-gray-600 bg-gray-200 rounded-md px-2">
+                      <span className="text-1xl text-gray-600  rounded-md px-2">
                         {activity.attachment}
                       </span>
                     </div>
@@ -166,7 +166,7 @@ const ActivityCard = () => {
 
       {/* Browser Stats Card */}
       <Card className=" flex-1 p-8 ">
-        <CardHeader className="px-0 pt-0">
+        <CardHeader className="px-0 pt-0 ">
           <div className="flex space-x-6 text-sm font-medium text-[#384551]">
             <div className="bg-blue-500 text-white px-4 py-1 rounded-md">
               Browser
@@ -180,7 +180,7 @@ const ActivityCard = () => {
             <div className="grid grid-cols-12 text-sm text-[#384551] mb-2 font-semibold">
               <div className="col-span-1">NO</div>
               <div className="col-span-3">BROWSER</div>
-              <div className="col-span-2">VISITS</div> 
+              <div className="col-span-2">VISITS</div>
               <div className="col-span-6">DATA IN PERCENTAGE</div>
             </div>
 

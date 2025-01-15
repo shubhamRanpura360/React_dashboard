@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Bell,  Mail, ShoppingCart, CheckCircle } from "lucide-react";
+import { Bell, Mail, ShoppingCart, CheckCircle } from "lucide-react";
 
 const NotificationPanel = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -80,7 +80,7 @@ const NotificationPanel = () => {
     <div className="relative" ref={panelRef}>
       <div className="relative inline-block">
         <Bell
-          className="w-6 h-6 text-gray-900 cursor-pointer hover:text-gray-700"
+          className="w-6 h-6 text-gray-900 cursor-pointer dark:text-gray-300 hover:text-gray-700"
           onClick={() => setIsOpen(!isOpen)}
         />
         <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full px-1 py-0.9">
@@ -125,9 +125,7 @@ const NotificationPanel = () => {
                     </p>
                   </div>
                   {notification.type === "connection" && (
-                    <button className="text-gray-400 hover:text-gray-600">
-                     
-                    </button>
+                    <button className="text-gray-400 hover:text-gray-600"></button>
                   )}
                 </div>
               </div>

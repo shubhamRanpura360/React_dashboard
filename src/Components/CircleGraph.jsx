@@ -72,7 +72,6 @@ const CircularProgress = () => {
         </div>
         <div className="text-sm text-gray-500">{activeData.name}</div>
       </div>
-      
     </div>
   );
 };

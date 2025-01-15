@@ -50,11 +50,13 @@ const IncomeCircle = () => {
         <h6 className="text-gray-700 text-lg font-semibold">
           Income this last week
         </h6>
-        <span className="text-gray-500 font-semibold">$39k less than last week</span>
+        <span className="text-gray-500 font-semibold">
+          $39k less than last week
+        </span>
       </div>
     </div>
   );
-};  
+};
 
 // IncomeChart Component
 const data = [

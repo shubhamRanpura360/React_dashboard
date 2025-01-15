@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="max-w-[91%] py-16  flex items-center justify-between text-2xl pl-36">
       <div className="flex items-center gap-1 text-gray-600">
         © {currentYear}, made with
-        <Heart className="w-4 h-4 fill-red-500 text-red-500" /> 
+        <Heart className="w-4 h-4 fill-red-500 text-red-500" />
         <a href="#" className="text-blue-500 hover:text-blue-700">
           ThemeSelection
         </a>

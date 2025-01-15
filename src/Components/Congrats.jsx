@@ -4,7 +4,7 @@ import Card from "./Card";
 
 export const Congrats = () => {
   return (
-    <Card className="p-4">
+    <Card className="p-4 ">
       <div className="pt-12">
         <div className="flex justify-between items-start pr-24">
           {/* Left Section */}

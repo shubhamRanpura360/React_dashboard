@@ -1,18 +1,36 @@
+import React, { useState } from "react";
 import "./App.css";
-import React from "react";
 import Sidebar from "./Components/Sidebar";
-import DashBoard from "./Components/DashBoard";
 import { Search } from "./Components/Search";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import OrderList from "./Components/orderList";
+import OrderDetails from "./Components/OrderDetails";
+import Dashboard from "./Components/DashBoard";
+import Footer from "./Components/Footer";
 
 const App = () => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    document.documentElement.classList.toggle("dark");
+  };
+
   return (
-    <div className="flex overflow-hidden h-screen">
-      <Sidebar />
-      <div className="flex-1 p-6 bg-gray-100 overflow-y-auto">
-        <Search />
-        <DashBoard />
+    <Router>
+      <div className="flex overflow-hidden h-screen bg-gray-100 dark:bg-dark-background text-gray-900 dark:text-dark-text">
+        <Sidebar />
+        <div className="flex-1 p-6 overflow-y-auto">
+          <Search toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path="/Dashboard" element={<Dashboard />} />
+            <Route path="/orderlist" element={<OrderList />} />
+            <Route path="/OrderDetails/" element={<OrderDetails />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 };
 

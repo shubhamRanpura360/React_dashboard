@@ -5,16 +5,19 @@ import { LuLayoutDashboard } from "react-icons/lu";
 import { IoStorefrontSharp } from "react-icons/io5";
 import { TiShoppingCart } from "react-icons/ti";
 import { MdEmail, MdOutlineMarkUnreadChatAlt } from "react-icons/md";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
   const [isEcommerceOpen, setIsEcommerceOpen] = useState(false);
-  const [isOrderOpen, setIsOrderOpen] = useState(false);
-  const [active, setActive] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarCollapsed(!isSidebarCollapsed);
   };
+
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
 
   return (
     <aside
@@ -39,122 +42,113 @@ export default function Sidebar() {
           </button>
         </div>
 
-        <ul className="flex-1 px-2 mt-6 space-y-7 ">
+        <ul className="flex-1 px-2 mt-6 space-y-6 ">
           <li
             className={`flex items-center gap-4 p-2 rounded-md cursor-pointer ${
-              active
+              isActive("/dashboard")
                 ? "bg-blue-100 text-[#696cff]"
                 : "hover:bg-blue-100 text-gray-700"
             }`}
-            onClick={() => setActive(!active)}
           >
             <FaHome
               className={`text-3xl ${
-                active ? "text-[#696cff]" : "text-gray-500"
+                isActive("/dashboard") ? "text-[#696cff]" : "text-gray-500"
               }`}
             />
             {!isSidebarCollapsed && (
-              <span className="text-2xl">Dashboards</span>
+              <Link to="/dashboard" className="text-xl ">
+                Dashboards
+              </Link>
             )}
           </li>
 
-          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer ">
+          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <LuLayoutDashboard className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Layouts</span>
+              <span className="text-gray-700 text-xl">Layouts</span>
             )}
           </li>
 
-          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer ">
+          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <IoStorefrontSharp className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Front Pages</span>
+              <span className="text-gray-700 text-xl">Front Pages</span>
             )}
           </li>
 
           <li>
             <button
-              className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer "
+              className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer"
               onClick={() => setIsEcommerceOpen(!isEcommerceOpen)}
             >
               <TiShoppingCart className="text-gray-500 text-3xl" />
               {!isSidebarCollapsed && (
-                <>
-                  <span className="text-gray-700 text-2xl  ">eCommerce</span>
+                <div className="flex items-center justify-between cursor-pointer gap-28">
+                  <span className="text-gray-700 text-xl">eCommerce</span>
                   <span
-                    className={`transform transition-transform ml-auto ${
+                    className={`transform transition-transform ${
                       isEcommerceOpen ? "rotate-90" : ""
                     }`}
                   >
-                    <FaGreaterThan className="text-gray-500 " />
+                    <FaGreaterThan className="text-gray-500 font-semibold " />
                   </span>
-                </>
+                </div>
               )}
             </button>
+
             {isEcommerceOpen && !isSidebarCollapsed && (
-              <ul className="pl-4 mt-2 space-y-1">
+              <ul className="pl-4 mt-2 space-y-1 ">
                 <li>
-                  <button
-                    className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-200 cursor-pointer"
-                    onClick={() => setIsOrderOpen(!isOrderOpen)}
+                  <Link
+                    to="/orderlist"
+                    className={`flex items-center  p-2 rounded-md cursor-pointer ${
+                      isActive("/orderlist")
+                        ? "bg-blue-100 text-[#696cff]"
+                        : "hover:bg-gray-200 text-gray-700"
+                    }`}
                   >
-                    <span className="text-gray-700 text-xl ml-10 font-semibold">
-                      Order
+                    <span className="text-xl ml-10 font-semibold ">
+                      Order List
                     </span>
-                    <span
-                      className={`transform transition-transform ml-auto ${
-                        isOrderOpen ? "rotate-90" : ""
-                      }`}
-                    >
-                      <FaGreaterThan className="text-gray-500" />
+                  </Link>
+                  <Link
+                    to="/orderdetails"
+                    className={`flex items-center gap-4 p-2 rounded-md cursor-pointer ${
+                      isActive("/orderdetails")
+                        ? "bg-blue-100 text-[#696cff]"
+                        : "hover:bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    <span className="text-xl ml-10 font-semibold ">
+                      Order Details
                     </span>
-                  </button>
-                  {isOrderOpen && (
-                    <ul className="pl-4 mt-2 space-y-1 list-disc">
-                      <li>
-                        <a
-                          href="#"
-                          className="block p-2 text-gray-700 hover:text-gray-900 text-xl ml-8"
-                        >
-                          Order List
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="#"
-                          className="block p-2 text-gray-700 hover:text-gray-900 text-xl ml-8"
-                        >
-                          Order Details
-                        </a>
-                      </li>
-                    </ul>
-                  )}
+                  </Link>
                 </li>
               </ul>
             )}
           </li>
-          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer ">
+          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <MdEmail className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Email</span>
+              <span className="text-gray-700 text-xl">Email</span>
             )}
           </li>
-          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer ">
+          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <MdOutlineMarkUnreadChatAlt className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Chat</span>
+              <span className="text-gray-700 text-xl">Chat</span>
             )}
           </li>
-          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer ">
+          <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <FaCarAlt className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Logistics</span>
+              <span className="text-gray-700 text-xl">Logistics</span>
             )}
           </li>
           <li className="flex items-center gap-4 p-2 rounded-md hover:bg-gray-100 cursor-pointer">
             <FaTable className="text-gray-500 text-3xl" />
             {!isSidebarCollapsed && (
-              <span className="text-gray-700 text-2xl">Tables</span>
+              <span className="text-gray-700 text-xl">Tables</span>
             )}
           </li>
         </ul>

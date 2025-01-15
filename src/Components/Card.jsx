@@ -8,7 +8,7 @@ export const CardContent = ({ children, className = "", ...props }) => (
 
 export const Card = ({ children, className = "", ...props }) => (
   <div
-    className={`shadow-lg rounded-lg bg-white ${className}`}
+    className={`shadow-lg rounded-lg bg-white  ${className}`}
     style={{ height: "auto", width: "auto" }}
     {...props}
   >
@@ -25,5 +25,5 @@ export const CardHeader = ({ children, className = "", ...props }) => (
   </div>
 );
 
-export default Card;
+export default Card;    
 

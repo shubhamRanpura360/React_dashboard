@@ -27,11 +27,11 @@ const ProfileDropdown = () => {
       <img
         src="/profile.png"
         alt="profile"
-        className="w-14 rounded-full"
+        className="w-14 rounded-full mb-2"
         onClick={() => setIsOpen(!isOpen)}
       />
       <div
-        className="absolute bottom-0 right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white"
+        className="absolute bottom-0 left-5 w-3 h-3 bg-green-500 rounded-full border-2 border-white mb-2"
         title="Online"
       ></div>
 

@@ -27,7 +27,7 @@ const ProfileDropdown = () => {
       <img
         src="/profile.png"
         alt="profile"
-        className="w-14 rounded-full mb-2"
+        className="w-14 rounded-full mb-2 cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
       />
       <div

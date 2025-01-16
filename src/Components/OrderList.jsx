@@ -5,9 +5,10 @@ import Pagination from "./Pagination";
 import { Calendar, CheckSquare, RefreshCw, XCircle } from "lucide-react";
 
 const OrderList = () => {
+  const rowsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRows, setSelectedRows] = useState(new Set());
-  const rowsPerPage = 10;
+
 
   const stats = [
     { number: 56, label: "Pending Payment", icon: Calendar },
@@ -16,29 +17,25 @@ const OrderList = () => {
     { number: 32, label: "Failed", icon: XCircle },
   ];
 
+  
   const [rows, setRows] = useState(() =>
     Array.from({ length: 50 }, (_, i) => ({
       id: i + 1,
-      firstName: ["John", "Jane", "Bob", "Alice"][
-        Math.floor(Math.random() * 4)
-      ],
-      lastName: ["Smith", "Doe", "Johnson", "Brown"][
-        Math.floor(Math.random() * 4)
-      ],
+      firstName: ["John", "Jane", "Bob", "Alice"][Math.floor(Math.random() * 4)],
+      lastName: ["Smith", "Doe", "Johnson", "Brown"][Math.floor(Math.random() * 4)],
       age: Math.floor(Math.random() * 40) + 20,
-      date: new Date(
-        2023,
-        Math.floor(Math.random() * 12),
-        Math.floor(Math.random() * 28) + 1
-      ).toLocaleDateString(),
+      date: new Date(2023, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toLocaleDateString(),
       order: `#${Math.floor(1000 + Math.random() * 9000)}`,
       payment: ["Paid", "Cancelled", "Failed"][Math.floor(Math.random() * 3)],
     }))
   );
 
+
+  const totalPages = Math.ceil(rows.length / rowsPerPage);
+  const currentPageRows = rows.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+
   const handleView = (id) => {
     console.log(`Viewing order ${id}`);
-    // Handle view action
   };
 
   const handleDelete = (id) => {
@@ -47,13 +44,7 @@ const OrderList = () => {
 
   const handleSelectAll = (e) => {
     if (e.target.checked) {
-      setSelectedRows(
-        new Set(
-          rows
-            .slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage)
-            .map((row) => row.id)
-        )
-      );
+      setSelectedRows(new Set(currentPageRows.map((row) => row.id)));
     } else {
       setSelectedRows(new Set());
     }
@@ -68,12 +59,6 @@ const OrderList = () => {
     }
     setSelectedRows(newSelected);
   };
-
-  const totalPages = Math.ceil(rows.length / rowsPerPage);
-  const currentPageRows = rows.slice(
-    (currentPage - 1) * rowsPerPage,
-    currentPage * rowsPerPage
-  );
 
   const getPaymentStatusColor = (status) => {
     switch (status.toLowerCase()) {
@@ -92,16 +77,11 @@ const OrderList = () => {
     <>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-white sticky left-36 max-w-[1590px] overflow-x-hidden">
         {stats.map((stat, index) => (
-          <StatCard
-            key={index}
-            number={stat.number}
-            label={stat.label}
-            icon={stat.icon}
-          />
+          <StatCard key={index} number={stat.number} label={stat.label} icon={stat.icon} />
         ))}
       </div>
 
-      <div className="p-14 max-w-[1790px] pl-36 sticky  ">
+      <div className="p-14 max-w-[1790px] pl-36 sticky">
         <div className="bg-white rounded-lg shadow">
           <div className="overflow-x-auto">
             <table className="w-full text-sm text-left">
@@ -140,18 +120,12 @@ const OrderList = () => {
                     </td>
                     <td className="p-4">{row.id}</td>
                     <td className="p-4">{row.date}</td>
-                    <td className="">{`${row.firstName} ${row.lastName}`}</td>
+                    <td>{`${row.firstName} ${row.lastName}`}</td>
                     <td className="p-4">{row.age}</td>
                     <td className="p-4">{row.order}</td>
-                    <td className={`p-4 ${getPaymentStatusColor(row.payment)}`}>
-                      {row.payment}
-                    </td>
+                    <td className={`p-4 ${getPaymentStatusColor(row.payment)}`}>{row.payment}</td>
                     <td className="p-2">
-                      <ActionMenu
-                        row={row}
-                        onView={handleView}
-                        onDelete={handleDelete}
-                      />
+                      <ActionMenu row={row} onView={handleView} onDelete={handleDelete} />
                     </td>
                   </tr>
                 ))}

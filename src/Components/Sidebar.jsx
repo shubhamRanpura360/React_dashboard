@@ -34,11 +34,10 @@ export default function Sidebar() {
       <nav className="h-full flex flex-col border-r shadow-sm">
         <div className="p-4 pb-2 flex justify-between items-center">
           {!isSidebarCollapsed && (
-            <img
-              src="/logo-1.jpg.png"
-              alt="sneat logo"
-              className="w-40 h-auto"
-            />
+           <span className="text-4xl font-bold text-[#384551] dark:text-[#696cff]">
+           Sneat
+         </span>
+         
           )}
           <button
             className="p-1.5 rounded-lg text-white bg-[#696cff]"

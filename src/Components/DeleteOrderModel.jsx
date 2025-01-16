@@ -24,7 +24,7 @@ const DeleteOrderModal = ({ isOpen, onClose, onDelete }) => {
 
   return (
     <div className="fixed inset-0 bg-[#646E78] bg-opacity-50 flex items-center justify-center ">
-      <div className="bg-white rounded-lg p-6 max-w-[30%] w-full h-[40%] mx-4">
+      <div className="bg-white rounded-lg p-6 max-w-[30%] w-full h-[50%] mx-4">
         {status === "confirm" && (
           <div className="flex flex-col items-center mt-12">
             {/* Warning Icon */}
@@ -32,7 +32,7 @@ const DeleteOrderModal = ({ isOpen, onClose, onDelete }) => {
               <span className="text-orange-400 text-2xl font-bold">!</span>
             </div>
 
-            <h2 className="text-5xl text-[#646e78]  mb-20">Are you sure?</h2>
+            <h2 className="text-5xl text-[#646e78]  mb-32">Are you sure?</h2>
             <p className="text-gray-600 mb-22 text-center p-4">
               You won't be able to revert order!
             </p>

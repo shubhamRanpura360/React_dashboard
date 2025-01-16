@@ -9,7 +9,6 @@ const OrderList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedRows, setSelectedRows] = useState(new Set());
 
-
   const stats = [
     { number: 56, label: "Pending Payment", icon: Calendar },
     { number: 12689, label: "Completed", icon: CheckSquare },
@@ -17,22 +16,31 @@ const OrderList = () => {
     { number: 32, label: "Failed", icon: XCircle },
   ];
 
-  
   const [rows, setRows] = useState(() =>
     Array.from({ length: 50 }, (_, i) => ({
       id: i + 1,
-      firstName: ["John", "Jane", "Bob", "Alice"][Math.floor(Math.random() * 4)],
-      lastName: ["Smith", "Doe", "Johnson", "Brown"][Math.floor(Math.random() * 4)],
+      firstName: ["John", "Jane", "Bob", "Alice"][
+        Math.floor(Math.random() * 4)
+      ],
+      lastName: ["Smith", "Doe", "Johnson", "Brown"][
+        Math.floor(Math.random() * 4)
+      ],
       age: Math.floor(Math.random() * 40) + 20,
-      date: new Date(2023, Math.floor(Math.random() * 12), Math.floor(Math.random() * 28) + 1).toLocaleDateString(),
+      date: new Date(
+        2023,
+        Math.floor(Math.random() * 12),
+        Math.floor(Math.random() * 28) + 1
+      ).toLocaleDateString(),
       order: `#${Math.floor(1000 + Math.random() * 9000)}`,
       payment: ["Paid", "Cancelled", "Failed"][Math.floor(Math.random() * 3)],
     }))
   );
 
-
   const totalPages = Math.ceil(rows.length / rowsPerPage);
-  const currentPageRows = rows.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
+  const currentPageRows = rows.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
 
   const handleView = (id) => {
     console.log(`Viewing order ${id}`);
@@ -77,7 +85,12 @@ const OrderList = () => {
     <>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 bg-white sticky left-36 max-w-[1590px] overflow-x-hidden">
         {stats.map((stat, index) => (
-          <StatCard key={index} number={stat.number} label={stat.label} icon={stat.icon} />
+          <StatCard
+            key={index}
+            number={stat.number}
+            label={stat.label}
+            icon={stat.icon}
+          />
         ))}
       </div>
 
@@ -123,9 +136,15 @@ const OrderList = () => {
                     <td>{`${row.firstName} ${row.lastName}`}</td>
                     <td className="p-4">{row.age}</td>
                     <td className="p-4">{row.order}</td>
-                    <td className={`p-4 ${getPaymentStatusColor(row.payment)}`}>{row.payment}</td>
+                    <td className={`p-4 ${getPaymentStatusColor(row.payment)}`}>
+                      {row.payment}
+                    </td>
                     <td className="p-2">
-                      <ActionMenu row={row} onView={handleView} onDelete={handleDelete} />
+                      <ActionMenu
+                        row={row}
+                        onView={handleView}
+                        onDelete={handleDelete}
+                      />
                     </td>
                   </tr>
                 ))}

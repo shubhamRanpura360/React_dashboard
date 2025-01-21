@@ -10,7 +10,6 @@ const ProfileDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -38,13 +37,12 @@ const ProfileDropdown = () => {
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-20">
           <div className="flex items-center px-4 py-3 border-b border-gray-100">
-            {/* Left-side Image */}
             <img
               src="/profile.png"
               alt="Profile"
               className="w-12 h-12 rounded-full mr-4"
             />
-            {/* Right-side Content */}
+
             <div>
               <p className="text-1xl font-medium text-gray-900">John Doe</p>
               <p className="text-1xl text-gray-500">Admin</p>

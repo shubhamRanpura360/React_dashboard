@@ -13,7 +13,6 @@ const DeleteOrderModal = ({ isOpen, onClose, onDelete }) => {
   };
 
   const handleClose = () => {
-    // Reset status and close modal
     setTimeout(() => {
       setStatus("confirm");
       onClose();
@@ -56,7 +55,6 @@ const DeleteOrderModal = ({ isOpen, onClose, onDelete }) => {
 
         {status === "deleted" && (
           <div className="flex flex-col items-center p-20">
-            {/* Success Icon */}
             <div className="w-12 h-12 rounded-full border-4 border-green-400 flex items-center justify-center mb-4">
               <svg
                 className="w-6 h-6 text-green-400"
@@ -91,7 +89,6 @@ const DeleteOrderModal = ({ isOpen, onClose, onDelete }) => {
 
         {status === "cancelled" && (
           <div className="flex flex-col items-center p-20">
-            {/* Cancel Icon */}
             <div className="w-12 h-12 rounded-full border-4 border-red-400 flex items-center justify-center mb-4">
               <svg
                 className="w-6 h-6 text-red-400"

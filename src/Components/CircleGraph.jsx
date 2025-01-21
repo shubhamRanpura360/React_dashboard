@@ -37,7 +37,7 @@ const CircularProgress = () => {
   const onPieEnter = (_, index) => setActiveIndex(index);
   const onPieLeave = () => setActiveIndex(null);
 
-  // Get the data for the active index, or default to the first segment
+
   const activeData = activeIndex !== null ? data[activeIndex] : data[0];
 
   return (

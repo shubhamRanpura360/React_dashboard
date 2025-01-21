@@ -7,7 +7,6 @@ export const Congrats = () => {
     <Card className="p-4 ">
       <div className="pt-12">
         <div className="flex justify-between items-start pr-24">
-          {/* Left Section */}
           <div>
             <h2 className="text-blue-600 text-xl font-semibold mb-2">
               Congratulations John! 🎉
@@ -24,7 +23,7 @@ export const Congrats = () => {
               View Badges
             </button>
           </div>
-          {/* Right Section */}
+
           <div className="flex items-center space-x-4">
             <img
               src="man-with-laptop.png"

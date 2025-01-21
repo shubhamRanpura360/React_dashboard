@@ -69,13 +69,11 @@ const IncomeCard = () => {
             </div>
 
             <div className="flex items-center max-h-[120px] ">
-              {/* Left Side */}
               <div className="p-6 mb-6">
                 <p className="text-4xl text-[#384551] pl-2">8,258</p>
                 <p className="text-[#646E78] pl-2 p-3 ">Total Orders</p>
               </div>
 
-              {/* Right Side */}
               <div className=" pl-44">
                 <CircularProgress />
                 <canvas id="circleGraph" width="50%" height="50%"></canvas>
@@ -142,7 +140,6 @@ const IncomeCard = () => {
         </CardContent>
       </Card>
 
-      {/* Income Card */}
       <Card className="flex-1 min-w-[510px]">
         <CardContent>
           <div className="space-y-8">
@@ -158,14 +155,12 @@ const IncomeCard = () => {
               </button>
             </div>
             <div className="flex items-center gap-3">
-              {/* Icon/Image */}
               <img
                 src="/public/wallet-primary.png"
                 alt="Balance Icon"
                 className="h-10 w-10"
               />
 
-              {/* Text Content */}
               <div>
                 <p className="text-gray-500">Total Balance</p>
                 <div className="flex items-center gap-2">
@@ -182,7 +177,6 @@ const IncomeCard = () => {
         </CardContent>
       </Card>
 
-      {/* Transactions Card */}
       <Card className="flex-1 min-w-[532px]">
         <CardContent>
           <div className="space-y-4">

@@ -125,7 +125,6 @@ const OrderDetails = () => {
   return (
     <>
       <div className="flex items-center justify-between p-8 pl-36 max-w-[1765px]">
-        {/* Left section */}
         <div className="flex flex-col">
           <div className="flex items-center gap-4 text-[#385551] font-semibold">
             <span className="text-2xl text-[#385551]">Order #32543</span>
@@ -143,7 +142,6 @@ const OrderDetails = () => {
           </span>
         </div>
 
-        {/* Right section */}
         <button
           onClick={openDeleteModal}
           className="bg-[#FFE0DB] text-red-600 px-4 py-2 rounded transition-colors hover:bg-red-500 hover:text-white"
@@ -151,7 +149,6 @@ const OrderDetails = () => {
           Delete Order
         </button>
 
-        {/* Delete Order Modal */}
         <DeleteOrderModal
           isOpen={isDeleteModalOpen}
           onClose={closeDeleteModal}
@@ -160,13 +157,10 @@ const OrderDetails = () => {
       </div>
 
       <div className="flex flex-wrap gap-8 justify-between max-w-[1880px] p-4 px-36">
-        {/* Left Section */}
         <div className="flex flex-col flex-[2]">
-          {/* Order Details Card */}
           <Card className="flex-col p-4">
             <CardContent>
               <div className="space-y-3 text-[#384551]">
-                {/* Table Header */}
                 <div className="flex text-1xl text-gray-600 pb-2 font-semibold border-b-2 ">
                   <div className="flex-1">
                     <input
@@ -181,7 +175,7 @@ const OrderDetails = () => {
                   <div className="flex-[2]">QTY</div>
                   <div className="flex-[2]">TOTAL</div>
                 </div>
-                {/* Table Body */}
+
                 {orderItems.map((item) => (
                   <div
                     key={item.id}
@@ -211,7 +205,7 @@ const OrderDetails = () => {
                     <div className="flex-[2]">${item.total}</div>
                   </div>
                 ))}
-                {/* Summary */}
+
                 <div className="pt-4 space-y-2 text-[#646E78] ">
                   <div className="flex justify-end">
                     <div className="w-48">
@@ -237,7 +231,7 @@ const OrderDetails = () => {
               </div>
             </CardContent>
           </Card>
-          {/* Shipping Activity */}
+
           <Card className="flex-col p-4 mt-6">
             <CardHeader>
               <h2 className="text-xl font-semibold text-[#384551]">
@@ -284,9 +278,7 @@ const OrderDetails = () => {
           </Card>
         </div>
 
-        {/* Right Section */}
         <div className="flex flex-col flex-1 gap-6 ">
-          {/* Customer Details */}
           <Card className="p-4">
             <CardHeader className="mb-4">
               <h2 className="text-xl font-semibold text-[#384551]">
@@ -321,18 +313,12 @@ const OrderDetails = () => {
               <div className="mt-6 font-semibold">
                 <div className="flex justify-between items-center mb-2">
                   <h3 className="text-[#384551] font-semibold">Contact info</h3>
-                  <button
-                    className="text-blue-500 text-sm"
-                    onClick={openModal} // Open the modal when the button is clicked
-                  >
+                  <button className="text-blue-500 text-sm" onClick={openModal}>
                     Edit
                   </button>
                 </div>
                 {/* Modal */}
-                <EditUserModal
-                  isOpen={isModalOpen}
-                  onClose={closeModal} // Close the modal when the user clicks cancel or submits
-                />
+                <EditUserModal isOpen={isModalOpen} onClose={closeModal} />
                 <div className="space-y-1">
                   <p className="text-sm text-gray-500">
                     Email: Shamus889@yahoo.com
@@ -344,7 +330,7 @@ const OrderDetails = () => {
               </div>
             </CardContent>
           </Card>
-          {/* Shipping Address */}
+
           <Card className="p-2">
             <CardHeader className="flex justify-between items-center ">
               <h2 className="text-xl font-medium text-[#384551]">
@@ -352,15 +338,12 @@ const OrderDetails = () => {
               </h2>
               <button
                 className="text-blue-500 text-sm font-semibold"
-                onClick={openModal} // Open the modal when the button is clicked
+                onClick={openModal}
               >
                 Edit
               </button>
               {/* Modal */}
-              <EditUserModal
-                isOpen={isModalOpen}
-                onClose={closeModal} // Close the modal when the user clicks cancel or submits
-              />
+              <EditUserModal isOpen={isModalOpen} onClose={closeModal} />
             </CardHeader>
             <CardContent>
               <div className="text-sm text-[#646E6E] font-semibold ">
@@ -371,7 +354,7 @@ const OrderDetails = () => {
               </div>
             </CardContent>
           </Card>
-          {/* Billing Address */}
+
           <Card className="p-4">
             <CardHeader className="flex justify-between items-center mb-4">
               <h2 className="text-xl font-medium text-[#384551]">
@@ -384,10 +367,7 @@ const OrderDetails = () => {
                 Edit
               </button>
               {/* Modal */}
-              <EditUserModal
-                isOpen={isModalOpen}
-                onClose={closeModal} // Close the modal when the user clicks cancel or submits
-              />
+              <EditUserModal isOpen={isModalOpen} onClose={closeModal} />
             </CardHeader>
             <CardContent>
               <div className="text-sm text-[#646E6E] font-semibold">

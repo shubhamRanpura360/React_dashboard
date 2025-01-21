@@ -9,13 +9,11 @@ import {
   Area,
 } from "recharts";
 
-// IncomeGauge Component
 const IncomeCircle = () => {
   const income = 65;
 
   return (
     <div className="flex items-center justify-center gap-4 ">
-      {/* Left Side Circular Progress */}
       <div className="flex items-center ">
         <div className="relative h-20 w-20">
           <svg className="h-full w-full" viewBox="0 0 100 100">
@@ -45,7 +43,6 @@ const IncomeCircle = () => {
         </div>
       </div>
 
-      {/* Right Side Text Content */}
       <div className="">
         <h6 className="text-gray-700 text-lg font-semibold">
           Income this last week
@@ -58,7 +55,6 @@ const IncomeCircle = () => {
   );
 };
 
-// IncomeChart Component
 const data = [
   { month: "Jan", value: 45 },
   { month: "Feb", value: 30 },

@@ -51,9 +51,7 @@ const PaymentCard = () => {
 
   return (
     <div className="flex flex-wrap gap-5 w-full ">
-      {/* Top Cards Container */}
       <div className="flex gap-10  ">
-        {/* Left Card (Payments) */}
         <Card className="pl-2">
           <div className="pt-3  w-[370px]">
             <div className="flex items-center justify-between p-3 relative">
@@ -94,7 +92,6 @@ const PaymentCard = () => {
           </div>
         </Card>
 
-        {/* Right Card (Revenue) */}
         <Card className="  min-h-[300px]">
           <CardContent className=" flex flex-col p-4 min-w-[380px] h-[300px]">
             <div className="text-gray-600 text-xl">Revenue</div>
@@ -111,7 +108,6 @@ const PaymentCard = () => {
         </Card>
       </div>
 
-      {/* Bottom Card (Profile Report) */}
       <div className="w-full ">
         <Card className="w-full h-full min-h-[200px] min-w-[105%]">
           <CardContent className="h-full flex flex-col p-6">

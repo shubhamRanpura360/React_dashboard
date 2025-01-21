@@ -34,7 +34,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
       onClick={handleBackdropClick}
     >
       <div className="bg-white rounded-lg w-full h-[80%] max-w-5xl">
-        {/* Modal Header */}
         <div className="flex justify-between items-center p-4 border-b">
           <h2 className="text-xl font-semibold text-gray-800">
             Edit User Information
@@ -53,7 +52,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
           </p>
 
           <form onSubmit={handleSubmit}>
-            {/* Name Row */}
             <div className="flex flex-wrap gap-4 mb-4">
               <div className="flex-1 min-w-[200px]">
                 <label className="block text-sm text-gray-600 mb-1">
@@ -83,7 +81,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Username */}
             <div className="mb-4">
               <label className="block text-sm text-gray-600 mb-1">
                 Username
@@ -98,7 +95,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               />
             </div>
 
-            {/* Email and Status Row */}
             <div className="flex flex-wrap gap-4 mb-4">
               <div className="flex-1 min-w-[200px]">
                 <label className="block text-sm text-gray-600 mb-1">
@@ -132,7 +128,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Tax ID and Phone Number Row */}
             <div className="flex flex-wrap gap-4 mb-4">
               <div className="flex-1 min-w-[200px]">
                 <label className="block text-sm text-gray-600 mb-1">
@@ -168,7 +163,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Language and Country Row */}
             <div className="flex flex-wrap gap-4 mb-4">
               <div className="flex-1 min-w-[200px]">
                 <label className="block text-sm text-gray-600 mb-1">
@@ -208,7 +202,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               </div>
             </div>
 
-            {/* Billing Address Toggle */}
             <div className="flex items-center mb-6">
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -234,7 +227,6 @@ const EditUserModal = ({ isOpen, onClose }) => {
               </label>
             </div>
 
-            {/* Action Buttons */}
             <div className="flex justify-center gap-3">
               <button
                 type="button"

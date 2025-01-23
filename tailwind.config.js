@@ -10,9 +10,9 @@ export default {
   plugins: [],
 }
 
-// tailwind.config.js
+
 module.exports = {
-  darkMode: 'class', // Enables dark mode using the 'dark' class
+  darkMode: 'class', 
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
